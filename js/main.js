@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', function(e) {
         });
         setTimeout(() => {
             document.querySelector('.preloader').remove()
-        }, 3300);
+        }, 7000);
 })
