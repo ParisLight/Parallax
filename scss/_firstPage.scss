@@ -1,68 +1,85 @@
-body, html{
-    height: 100%;
-    background: #000;
-    overflow: hidden   ;
+body,
+html {
+  height: 100%;
+  background: #000;
+  overflow: hidden;
 }
 
-.preloader{
+.play {
+  position: absolute;
+  z-index: 4;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 15px 20px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255 255 255 /0.3);
+  }
+}
+.preloader {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  z-index: 2;
+  max-width: 100%;
+  transition: 1.3s ease-in-out;
+  &-out {
+    transform: translateX(100%);
+  }
+}
+
+.preloader__img {
+  position: relative;
+  transition: 2s ease-in-out;
+  transition-property: opacity;
+  margin: 0 auto;
+  max-width: 40%;
+  width: 100%;
+  opacity: 0;
+  img {
+    width: 100%;
+  }
+
+  &-active {
+    opacity: 1;
+  }
+}
+
+.slider {
+  height: 100%;
+  width: 100%;
+}
+
+.slider__wrapper {
+  will-change: transform;
+}
+
+.slider__item {
+  overflow: hidden;
+  will-change: transform;
+  &::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background-color: #000;
-    z-index: 2;
-    max-width: 100%;
-    transition: 1.3s ease-in-out;
-    &-out{
-        transform: translateX(100%);
-    }
+    z-index: 1;
+    box-shadow: inset 0 0 250px rgba(0 0 0);
+  }
 }
 
-
-.preloader__img{
-    position: relative;
-    transition: 2s ease-in-out;
-    transition-property: opacity;
-    margin: 0 auto;
-    max-width: 40%;
-    width: 100%;
-    opacity: 0;
-    img{
-        width: 100%;
-    }
-
-    &-active{
-        opacity: 1;
-    }
+.slider__wrapper {
+  transform-style: preserve-3d;
 }
 
-.slider{
-    height: 100%;
-    width: 100%;
-}
-
-.slider__wrapper{
-    will-change: transform;
-}
-
-.slider__item{
-    overflow: hidden;
-    will-change: transform;
-    &::before{
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        box-shadow: inset 0 0 250px rgba(0 0 0 );
-    }
-}
-
-.slider__wrapper{
-    transform-style: preserve-3d;
-}
-
-
-.slider__layer{
-    position: absolute;
-    inset: 0;
-    background-size: cover !important;
-	background-position: center !important;
+.slider__layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover !important;
+  background-position: center !important;
 }

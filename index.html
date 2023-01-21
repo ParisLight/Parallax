@@ -9,15 +9,11 @@
     <title>The Witcher</title>
 </head>
 <body>
-    <audio autoplay="autoplay" src="audio/compress.ogg"></audio>
-    <audio autoplay="autoplay">
-        <source src="audio/compress.ogg" type="audio/ogg">
-    </audio>  
-    <audio autoplay="autoplay" src="audio/compress.aac"></audio>
-    <audio autoplay="autoplay">
+    <audio class="audio" autoplay="autoplay" src="audio/compress.aac"></audio>
         <source src="audio/compress.aac" >
     </audio>  
     <div class="preloader">
+    <div class="play" onclick="document.querySelector('.audio').play()">Play</div> 
         <div class="preloader__img">
             <img src="img/preloader/preloader.jpg" alt="">
         </div>
@@ -55,7 +51,7 @@
     
     <script src="libs/particles/particles.js"></script>
     <script src="libs/swiper/swiper-bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
       
 </body>
 </html>

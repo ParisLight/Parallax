@@ -4,10 +4,30 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   background: #000;
   overflow: hidden;
+}
+
+.play {
+  position: absolute;
+  z-index: 4;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 15px 20px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.play:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .preloader {
